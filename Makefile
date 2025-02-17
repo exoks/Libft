@@ -57,7 +57,7 @@ $(NAME): $(OBJ)
 
 bonus: $(OBJ_BNS)
 	@ar -rcs $(NAME) $^
-	@echo "${GREEN}[OK]: $(NAME) ✔️${NOCLR}"
+	@echo "${GREEN}[OK]: ${CYAN}$(NAME) ✔️${NOCLR}"
 
 $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR) 
 	@$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
