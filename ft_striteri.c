@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 21:36:48 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/10/02 21:40:33 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/29 18:58:27 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/09/30 18:04:11 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-//====<[ ft_calloc: ]>==========================================================
-void	*ft_calloc(size_t count, size_t size)
+//====<[ ft_striteri: ]>========================================================
+void	ft_striteri(char *s, void (*f) (unsigned int, char *))
 {
-	void	*pt;
-	size_t	i;
-
-	pt = (void *) malloc(count * size);
-	if (!pt)
-		return (0);
-	i = 0;
-	while (i < size * count)
-		*((char *)pt + i++) = 0;
-	return (pt);
-}
-/*
-#include <stdio.h>
-int	main(int ac, char **av)
-{
-	char	*str;
 	int	i;
 
-	str = (char *) calloc(3, 1);
-	printf("%s\n", str);
+	if (!s || !f)
+		return ;
+	i = -1;
+	while (s[++i])
+		f((unsigned int)i, &s[i]);
+}
+/*
+void	ft(unsigned int i, char *chaaddr)
+{
+	(void) i;
+	*chaaddr = '0';
+}
+
+#include <stdio.h>
+int	main(void)
+{
+	char	s[7] = "oussama";
+
+	ft_striteri(s, &ft);
+	printf("%s\n", s);
 	return (0);
 }
 */

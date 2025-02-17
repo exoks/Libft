@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 21:03:28 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/08/14 21:03:32 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/30 12:09:10 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/09/30 12:18:53 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_word_counter: ]>====================================================
 static int	ft_word_counter(char const *s, char c)
 {
 	int	i;
@@ -26,6 +27,7 @@ static int	ft_word_counter(char const *s, char c)
 	return (counter);
 }
 
+//====<[ ft_strsize: ]>=========================================================
 static int	ft_strsize(char const *s, char c)
 {
 	if (*s && *s != c)
@@ -33,6 +35,7 @@ static int	ft_strsize(char const *s, char c)
 	return (0);
 }
 
+//====<[ ft_str_cpy: ]>=========================================================
 static int	ft_str_cpy(char *dst, char const *src, char c)
 {
 	int	i;
@@ -44,6 +47,7 @@ static int	ft_str_cpy(char *dst, char const *src, char c)
 	return (i);
 }
 
+//====<[ ft_split: ]>===========================================================
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;

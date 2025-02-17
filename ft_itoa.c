@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 16:00:28 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 16:00:32 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/30 12:19:33 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 21:52:35 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_nb_size: ]>=========================================================
 static int	ft_nb_size(long int nb)
 {
 	if (nb)
@@ -18,6 +19,7 @@ static int	ft_nb_size(long int nb)
 	return (0);
 }
 
+//====<[ ft_itoa: ]>============================================================
 char	*ft_itoa(int n)
 {
 	char		*str;

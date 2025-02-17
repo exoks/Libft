@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 16:03:24 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 16:03:27 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/29 21:32:30 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 20:29:41 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_memcmp: ]>==========================================================
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
@@ -28,9 +29,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 #include <stdio.h>
 int	main(int ac, char **av)
 {
-	int	a[5] = {1, 2, 3, 4, 5};
-	int	b[5] = {1, 2, 3, 7, 8};
-	printf("%d\n", memcmp(a, b, 20));
+	int	a[5] = {0, 2, 3, 4, 5};
+	int	b[5] = {-1, 2, 3, 7, 8};
+	printf("%d\n", ft_memcmp(a, b, 20));
 	return (0);
 }
 */

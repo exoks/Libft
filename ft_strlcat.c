@@ -3,21 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 16:08:01 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 16:08:05 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/29 21:23:49 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/10 13:10:33 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_strlcat: ]>=========================================================
 size_t	ft_strlcat(char	*dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	dst_len;
 	size_t	src_len;
 
-	if (dst == NULL && dstsize == 0)
+	if (dst == 0 && dstsize == 0)
 		return (ft_strlen(src));
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
@@ -29,14 +30,3 @@ size_t	ft_strlcat(char	*dst, const char *src, size_t dstsize)
 	dst[i] = 0;
 	return (dst_len + src_len);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	src[0xF00] = "hello world";
-//	char	*src = "oussama";
-	printf("%zu\n", strlcat((void *) 0, src, 0));
-	printf("%s\n", src);
-	return (0);
-}
-*/

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 16:10:46 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 16:11:50 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/29 21:28:36 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 18:44:02 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_strrchr: ]>=========================================================
 char	*ft_strrchr(const char *s, int c)
 {
 	int	len;

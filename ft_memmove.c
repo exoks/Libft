@@ -3,26 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/09 18:56:54 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/08/09 18:56:58 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/29 21:22:06 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 19:26:58 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_memmove: ]>=========================================================
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
-
-	if (dst == src)
-		return (dst);
-	if (src > dst)
-	{
-		i = -1;
-		while (++i < len)
-			*((char *)dst + i) = *((char *)src + i);
-	}
+	if (src >= dst)
+		ft_memcpy(dst, src, len);
 	else
 	{
 		while (--len >= 0 && len <= 2147483647)

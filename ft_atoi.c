@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 15:55:56 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 15:56:01 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/29 21:34:20 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 19:20:10 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_atoi: ]>============================================================
 int	ft_atoi(const char *str)
 {
-	int	s;
-	int	nb;
+	int		s;
+	long	nb;
 
 	s = 1;
 	nb = 0;
@@ -26,12 +27,7 @@ int	ft_atoi(const char *str)
 		str++;
 	while (*str >= '0' && *str <= '9')
 		nb = (nb * 10) + (*(str++) - '0');
-	nb *= s;
-	if (nb == -469762049)
-		return (-1);
-	if (nb == 469762049)
-		return (0);
-	return (nb);
+	return (nb * s);
 }
 /*
 #include <stdlib.h>

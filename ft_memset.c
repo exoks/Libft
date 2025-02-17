@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 16:04:32 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 16:04:35 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/29 21:17:08 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 18:02:16 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include "libft.h"
 
-// if c < 0 this value will be shefted (that's why i used unsigne>
+//====<[ ft_memset: ]>==========================================================
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*med;
 	size_t			i;
 
 	med = (unsigned char *)b;
-	i = -1;
-	while (++i < len)
-		med[i] = c;
+	i = 0;
+	while (i < len)
+		med[i++] = c;
 	return (b);
 }
 /*

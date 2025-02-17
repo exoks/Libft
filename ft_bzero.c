@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 15:56:21 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 15:56:30 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/29 21:18:19 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 18:02:37 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_bzero: ]>===========================================================
 void	ft_bzero(void *b, size_t len)
 {
 	char	*med;
 	size_t	i;
 
 	med = (char *)b;
-	i = -1;
-	while (++i < len)
-		med[i] = 0;
+	i = 0;
+	while (i < len)
+		med[i++] = 0;
 }
 /*
 #include <stdio.h>

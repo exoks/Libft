@@ -1,102 +1,81 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/10 15:55:17 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/08/10 15:55:21 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/10/01 13:23:35 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 15:40:52 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-/*
+
+//====<[ ft_lstmap: ]>==========================================================
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-        t_list  *relst;
-        t_list  *med;
-	(void) del;
+	t_list	*new;
+	t_list	*head;
 
 	if (!lst)
 		return (0);
-        relst = (t_list *) malloc(sizeof(t_list));
-        if (!relst)
-                return (0);
-        med = relst;
-        while (lst)
-	{
-		med->content = f(lst->content);
-		med->next = (t_list *) malloc (sizeof(t_list));
-		if (!(med->next))
-		{
-			ft_lstclear(relst, del);
-			return (0);
-		}
-		lst = lst->next;
-		med = med->next;
-        }
-        return (relst);
-}
-*/
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*list;
-	int		i;
-
-	(void) del;
-	if (!lst)
+	new = malloc(sizeof(t_list));
+	if (!new)
 		return (0);
-	list = (t_list *) malloc (sizeof(t_list) * ft_lstsize(lst));
-	if (!list)
-		return (0);
-	i = -1;
+	head = new;
+	head->content = f(lst->content);
+	lst = lst->next;
 	while (lst)
 	{
-		list[++i].content = f(lst->content);
-		if (lst->next != 0)
-			list[i].next = &list[i + 1];
+		head->next = malloc (sizeof(t_list));
+		head = head->next;
+		if (!head)
+		{
+			ft_lstclear(&new, del);
+			return (0);
+		}
+		head->content = f(lst->content);
 		lst = lst->next;
 	}
-	list[i].next = 0;
-	return (list);
+	head->next = 0;
+	return (new);
 }
 /*
-void	*ft_f(void *lst)
+void	*ft(void *addr)
 {
-	return (lst);
+	return (addr);
 }
 
-void	ft_del(void *content)
+void	del(void *addr)
 {
-	free(content);
+	free(addr);
 }
 
 #include <stdio.h>
 int	main(void)
 {
-	t_list *list;
-	int	i;
-	t_list	*relist;
+	int		size;
+	t_list *lst;
+	int		i;
+	t_list	*cpy;
 
-	list = (t_list *) malloc (sizeof(t_list) * 4);
-	if (!list)
+	size = 4;
+	lst = (t_list *) malloc (sizeof(t_list) * size);
+	if (!lst)
 		return (0);
 	i = -1;
-	while (++i < 4)
+	while (++i < size)
 	{
-		list[i].content = "oussama";
-		list[i].next = &list[i + 1];
+		if (i != (size - 1))
+			lst[i].next = &lst[i + 1];
+		lst[i].content = "oussama";
 	}
-	list[3].content = "max";
-	list[3].next = 0;
-	printf("%d\n", ft_lstsize(list));
-	// value of list pointer
-	printf("where : %s\n", list->content);
-	relist = ft_lstmap(list, &ft_f, &ft_del);
-	while (relist)
+	lst[3].next = 0;
+	cpy = ft_lstmap(lst, &ft, &del);
+	while (cpy)
 	{
-		printf("%s\n", relist->content);
-		relist = relist->next;
+		printf("%s\n", cpy->content);
+		cpy = cpy->next;
 	}
 	return (0);
 }

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 15:50:27 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 15:50:31 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/30 15:22:47 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/09/30 15:22:49 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_lstiter: ]>=========================================================
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)

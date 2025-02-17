@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 16:06:38 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 16:06:54 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/29 21:27:56 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/10/02 18:22:13 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_strchr: ]>==========================================================
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s && *s != (char) c)

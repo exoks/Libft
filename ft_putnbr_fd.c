@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 16:05:21 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 16:05:25 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/30 15:14:53 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/09/30 15:16:17 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_putnbr_fd: ]>=======================================================
 void	ft_putnbr_fd(int n, int fd)
 {
 	long int	nb;

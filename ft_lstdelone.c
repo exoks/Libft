@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oezzaou <oezzaou@student.1337.fr>          +#+  +:+       +#+        */
+/*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/16 15:32:11 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/07/16 15:32:15 by oezzaou          ###   ########.fr       */
+/*   Created: 2022/09/30 15:21:30 by oezzaou           #+#    #+#             */
+/*   Updated: 2022/09/30 15:21:34 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
+//====<[ ft_lstdelone: ]>====================================================
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!del || !lst)
