@@ -86,23 +86,23 @@ $(OBJ_DIR):
 	@mkdir -p $@
 
 clean:
-	@if [ -d $(OBJ_DIR) ]; then \
-		${RM} $(OBJ_DIR); \
-		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-20s${RESET}| ./%s\n" \
-					 "... " "$(PROJECT)/$(OBJ_DIR) ✔️"; \
-	else \
-		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-20s${RESET}| ./%s\n" \
-					 "..." "$(PROJECT)/$(OBJ_DIR) ✖️"; \
+	@if [ -d $(OBJ_DIR) ]; then\
+		${RM} $(OBJ_DIR);\
+		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-20s${RESET}| ./%s\n"\
+					 "... " "$(PROJECT)/$(OBJ_DIR) ✔️";\
+	else\
+		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-20s${RESET}| ./%s\n"\
+					 "..." "$(PROJECT)/$(OBJ_DIR) ✖️";\
 	fi
 
 fclean: clean
-	@if [ -f $(NAME) ]; then \
-		${RM} $(NAME); \
-		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-20s${RESET}| ./%s\n" \
-					 "... " "$(PROJECT)/$(NAME) ✔️"; \
-	else \
-		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-20s${RESET}| ./%s\n" \
-					 "..." "$(PROJECT)/$(NAME) ✖️"; \
+	@if [ -f $(NAME) ]; then\
+		${RM} $(NAME);\
+		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-20s${RESET}| ./%s\n"\
+					 "... " "$(PROJECT)/$(NAME) ✔️";\
+	else\
+		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-20s${RESET}| ./%s\n"\
+					 "..." "$(PROJECT)/$(NAME) ✖️";\
 	fi
 
 re: fclean all
