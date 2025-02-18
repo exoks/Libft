@@ -22,6 +22,7 @@ CFLAGS	:= -Wall -Wextra -Werror
 RM			:= rm -rf
 
 #===<[ Sources: ]>==============================================================
+PROJECT	:= libft
 NAME		:= libft.a
 
 SRC 		:= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
@@ -68,11 +69,11 @@ $(OBJ_DIR):
 
 clean:
 	@${RM} $(OBJ_DIR)
-	@echo "${GREEN}[OK]${NOCLR}: Cleaning ... $(OBJ_DIR)/ ✔️"
+	@echo "${GREEN}[OK]${NOCLR}: Cleaning ... ./$(PROJECT)/$(OBJ_DIR) ✔️"
 
 fclean: clean
 	@${RM} $(NAME)
-	@echo "${GREEN}[OK]${NOCLR}: Cleaning ... $(NAME) ✔️"
+	@echo "${GREEN}[OK]${NOCLR}: Cleaning ... ./$(PROJECT)/$(NAME) ✔️"
 
 re: fclean all
 
