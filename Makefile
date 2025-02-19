@@ -49,7 +49,8 @@ SRC 		:= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 					 ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c \
 					 ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c \
 					 ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
-					 ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
+					 ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
+					 get_next_line.c get_next_line_utils.c
 
 SRC_BNS	:= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 					 ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
@@ -59,9 +60,10 @@ SRC_BNS	:= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 					 ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c \
 					 ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 					 ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c \
-					 ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+					 ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c \
+					 get_next_line.c get_next_line_utils.c
 
-HEADER	= libft.h
+INCLUDE	= -Iinclude 
 OBJ_DIR	= obj
 OBJ			:= $(addprefix $(OBJ_DIR)/, ${SRC:.c=.o})
 OBJ_BNS	:= $(addprefix $(OBJ_DIR)/, ${SRC_BNS:.c=.o})
@@ -79,8 +81,8 @@ bonus: $(OBJ_BNS)
 	@echo "${GREEN}[OK]: ${CYAN}$(NAME) ✔️${RESET}"
 
 $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR) 
-	@$(CC) $(CFLAGS) -I $(HEADER) -c $< -o $@
-	@printf "$(GREEN)[OK]${RESET}: ${PINK}Compiling${RESET} %-20s| $@\n" "$<"
+	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+	@printf "$(GREEN)[OK]${RESET}: ${PINK}Compiling${RESET} %-22s| $@\n" "$<"
 
 $(OBJ_DIR):
 	@mkdir -p $@
@@ -88,20 +90,20 @@ $(OBJ_DIR):
 clean:
 	@if [ -d $(OBJ_DIR) ]; then\
 		${RM} $(OBJ_DIR);\
-		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-20s${RESET}| ./%s\n"\
+		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-22s${RESET}| ./%s\n"\
 					 "... " "$(PROJECT)/$(OBJ_DIR) ✔️";\
 	else\
-		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-20s${RESET}| ./%s\n"\
+		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-22s${RESET}| ./%s\n"\
 					 "..." "$(PROJECT)/$(OBJ_DIR) ✖️";\
 	fi
 
 fclean: clean
 	@if [ -f $(NAME) ]; then\
 		${RM} $(NAME);\
-		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-20s${RESET}| ./%s\n"\
+		printf "${GREEN}[OK]${RESET}: ${ORANGE}Cleaning  %-22s${RESET}| ./%s\n"\
 					 "... " "$(PROJECT)/$(NAME) ✔️";\
 	else\
-		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-20s${RESET}| ./%s\n"\
+		printf "${RED}[KO]${RESET}: ${BLUE}Not Found %-22s${RESET}| ./%s\n"\
 					 "..." "$(PROJECT)/$(NAME) ✖️";\
 	fi
 
