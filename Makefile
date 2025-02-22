@@ -64,17 +64,13 @@ OBJ_BNS	:= $(addprefix $(OBJ_DIR)/, ${SRC_BNS:.c=.o})
 SRC_BNS	:= $(addprefix $(SRC_DIR)/, $(SRC)) 
 
 #====<[ Rules: ]>===============================================================
-all: signature $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ) $(OBJ_BNS) 
 	@ar -rcs $@ $^
 	@echo "${GREEN}[OK] ${CYAN}$(NAME) ✔️${RESET}"
 
-signature:
-	@printf "${GRAY}%19s${RESET}\n" "𓆩♕𓆪"
-	@printf "${GRAY}%s${RESET}\n"		"𓄂 oussama ezzaou𓆃  "
-
-bonus: $(OBJ_BNS) signature
+bonus: $(OBJ_BNS)
 	@ar -rcs $(NAME) $<
 	@echo "${GREEN}[OK]: ${CYAN}$(NAME) ✔️${RESET}"
 
