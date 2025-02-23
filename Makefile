@@ -6,7 +6,7 @@
 #    By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 15:57:20 by oezzaou           #+#    #+#              #
-#    Updated: 2023/02/21 14:57:02 by oezzaou          ###   ########.fr        #
+#    Updated: 2025/02/23 09:56:32 by oezzaou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,7 @@ OBJ_BNS	:= $(addprefix $(OBJ_DIR)/, ${SRC_BNS:.c=.o})
 SRC_BNS	:= $(addprefix $(SRC_DIR)/, $(SRC)) 
 
 #====<[ Rules: ]>===============================================================
-all: $(NAME)
+all: signature $(NAME)
 
 $(NAME): $(OBJ) $(OBJ_BNS) 
 	@ar -rcs $@ $^
@@ -74,6 +74,10 @@ $(NAME): $(OBJ) $(OBJ_BNS)
 bonus: $(OBJ_BNS)
 	@ar -rcs $(NAME) $<
 	@echo "${GREEN}[OK]: ${CYAN}$(NAME) ✔️${RESET}"
+
+signature:
+	@printf "${GRAY}%19s${RESET}\n"	"𓆩♕𓆪"
+	@printf "${GRAY}%s${RESET}\n"		"𓄂 oussama ezzaou𓆃  "
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR) 
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
