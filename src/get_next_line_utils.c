@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 11:35:31 by oezzaou           #+#    #+#             */
-/*   Updated: 2022/10/23 12:18:23 by oezzaou          ###   ########.fr       */
+/*   Updated: 2025/02/28 13:48:04 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
 
-//====<[ ft_lstnew: ]>==========================================================
-t_buff	*ft_lstnew(char *buff)
+//====<[ gnl_lstnew: ]>======================================================
+t_buff	*gnl_lstnew(char *buff)
 {
 	t_buff	*node;
 
@@ -24,8 +24,8 @@ t_buff	*ft_lstnew(char *buff)
 	return (node);
 }
 
-//====<[ ft_lstlast: ]>=========================================================
-t_buff	*ft_lstlast(t_buff *lst)
+//====<[ gnl_lstlast: ]>=====================================================
+t_buff	*gnl_lstlast(t_buff *lst)
 {
 	while (lst)
 	{
@@ -36,8 +36,8 @@ t_buff	*ft_lstlast(t_buff *lst)
 	return (lst);
 }
 
-//====<[ ft_lstclear: ]>========================================================
-t_buff	*ft_lstclear(t_buff **head)
+//====<[ gnl_lstclear: ]>=======================================================
+t_buff	*gnl_lstclear(t_buff **head)
 {
 	t_buff	*tmp;
 
