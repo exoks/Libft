@@ -6,7 +6,7 @@
 /*   By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 11:35:31 by oezzaou           #+#    #+#             */
-/*   Updated: 2025/02/28 13:48:04 by oezzaou          ###   ########.fr       */
+/*   Updated: 2025/02/28 13:56:05 by oezzaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -50,18 +50,4 @@ t_buff	*gnl_lstclear(t_buff **head)
 	}
 	head = 0;
 	return (0);
-}
-
-//====<[ ft_strcat: ]>==========================================================
-char	*ft_strcat(char *dst, char *src)
-{
-	int	i;
-
-	i = -1;
-	while (dst[++i])
-		;
-	while (*src)
-		dst[i++] = *(src++);
-	dst[i] = 0;
-	return (dst);
 }
