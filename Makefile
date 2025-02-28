@@ -6,7 +6,7 @@
 #    By: oezzaou <oezzaou@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 15:57:20 by oezzaou           #+#    #+#              #
-#    Updated: 2025/02/28 14:32:39 by oezzaou          ###   ########.fr        #
+#    Updated: 2025/02/28 15:24:34 by oezzaou          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -109,10 +109,18 @@ fclean: clean
 	@if [ -f $(STATIC_LIB) ]; then\
 		${RM} $(STATIC_LIB);\
 		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-26s${RESET}| ./%s\n"\
-					 "... " "$(PROJECT)/$(STATIC_LIB) ✔️";\
-	else\
+				 "... " "$(PROJECT)/$(STATIC_LIB) ✔️";\
+	elif [ ! -f $(STATIC_LIB) ]; then\
 		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-26s${RESET}| ./%s\n"\
 					 "..." "$(PROJECT)/$(STATIC_LIB) ✖️";\
+	fi
+	@if [ -f $(SHARED_LIB) ]; then\
+		${RM} $(SHARED_LIB);\
+		printf "${GREEN}[OK]${RESET} ${ORANGE}Cleaning  %-26s${RESET}| ./%s\n"\
+				 "... " "$(PROJECT)/$(SHARED_LIB) ✔️";\
+	elif [ ! -f $(SHARED_LIB) ]; then\
+		printf "${RED}[KO]${RESET} ${BLUE}Not Found %-26s${RESET}| ./%s\n"\
+					 "..." "$(PROJECT)/$(SHARED_LIB) ✖️";\
 	fi
 
 re: fclean all
