@@ -1,0 +1,1 @@
+This project is a C language library that includes over 40 utility functions, designed to enhance standard functionality. It features a Makefile that automates the compilation process, generating both a static (.a) and shared (.so) library for seamless integration into various projects.
