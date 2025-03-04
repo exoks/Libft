@@ -78,7 +78,6 @@ make all
 ```sh
 make static
 ```
-
 ### **Generating a Shared Library (`libft.so`)**
 To compile the **static** version of the library, run:
 ```sh
