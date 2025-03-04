@@ -1,80 +1,88 @@
-# Libft42 #
+# **Libft42**
 
-This project is a C language library that includes over 40 utility functions, designed to enhance standard functionality. It features a Makefile that automates the compilation process, generating both a static (.a) and shared (.so) library for seamless integration into various projects.
+This project is a C language library that includes over **40 utility** functions, designed to enhance standard functionality. It features a **Makefile** that automates the compilation process, generating both a **static** (`.a`) and **shared** (`.so`) library for seamless integration into various projects.
 
-## Libft functions: ##
+---
 
-#### Memory Management : ####
-* ft_bzero
-* ft_calloc
-* ft_memccpy 
-* ft_memchr
-* ft_memcmp
-* ft_memmove
-* ft_memset
+## **Available Functions**
 
-#### String Manipulation : ####
-* ft_strcat
-* ft_strchr
-* ft_strcmp
-* ft_strdup
-* ft_striteri
-* ft_strjoin
-* ft_strlcat
-* ft_strlcpy
-* ft_strlen
-* ft_strmapi
-* ft_strncmp
-* ft_strnstr
-* ft_strrchr
-* ft_strtrim
-* ft_substr
-* ft_split
-* ft_atoi
-* ft_itoa
+### **Memory Management**
+- `ft_bzero` – Sets a memory block to zero  
+- `ft_calloc` – Allocates and initializes memory  
+- `ft_memccpy` – Copies memory until a specific byte is encountered  
+- `ft_memchr` – Locates a byte in a memory block  
+- `ft_memcmp` – Compares memory blocks  
+- `ft_memmove` – Moves memory safely, even with overlapping regions  
+- `ft_memset` – Fills memory with a specified byte  
 
-#### Character Checks : ####
-* ft_isalnum
-* ft_isalpha
-* ft_isascii
-* ft_isdigit
-* ft_isprint
-* ft_tolower
-* ft_toupper
+### **String Manipulation**
+- `ft_strcat` – Concatenates two strings  
+- `ft_strchr` – Locates a character in a string  
+- `ft_strcmp` – Compares two strings  
+- `ft_strdup` – Duplicates a string  
+- `ft_striteri` – Applies a function to each character of a string (indexed)  
+- `ft_strjoin` – Concatenates two strings with memory allocation  
+- `ft_strlcat` – Concatenates strings with a size limit  
+- `ft_strlcpy` – Copies a string with a size limit  
+- `ft_strlen` – Calculates the length of a string  
+- `ft_strmapi` – Applies a function to each character of a string  
+- `ft_strncmp` – Compares two strings up to `n` characters  
+- `ft_strnstr` – Finds a substring within a string (bounded)  
+- `ft_strrchr` – Finds the last occurrence of a character in a string  
+- `ft_strtrim` – Trims specific characters from both ends of a string  
+- `ft_substr` – Extracts a substring from a string  
+- `ft_split` – Splits a string into an array of substrings  
+- `ft_atoi` – Converts a string to an integer  
+- `ft_itoa` – Converts an integer to a string  
 
-#### Linked List Operations : ####
-* ft_lstadd_back
-* ft_lstadd_front
-* ft_lstclear
-* ft_lstdelone
-* ft_lstiter
-* ft_lstlast
-* ft_lstmap
-* ft_lstnew
-* ft_lstsize
+### **Character Classification & Conversion**
+- `ft_isalnum` – Checks if a character is alphanumeric  
+- `ft_isalpha` – Checks if a character is alphabetic  
+- `ft_isascii` – Checks if a character belongs to the ASCII set  
+- `ft_isdigit` – Checks if a character is a digit  
+- `ft_isprint` – Checks if a character is printable  
+- `ft_tolower` – Converts an uppercase character to lowercase  
+- `ft_toupper` – Converts a lowercase character to uppercase  
 
-#### I/O Operatins : ####
-* ft_putchar_fd
-* ft_putendl_fd
-* ft_putnbr_fd
-* ft_putstr_fd
-* get_next_line
+### **Linked List Operations**
+- `ft_lstadd_back` – Adds a node at the end of a list  
+- `ft_lstadd_front` – Adds a node at the beginning of a list  
+- `ft_lstclear` – Clears an entire linked list  
+- `ft_lstdelone` – Deletes a single node from a list  
+- `ft_lstiter` – Iterates over a linked list and applies a function  
+- `ft_lstlast` – Retrieves the last node in a linked list  
+- `ft_lstmap` – Applies a function to each node and creates a new list  
+- `ft_lstnew` – Creates a new linked list node  
+- `ft_lstsize` – Counts the number of nodes in a list  
 
-## Libft Generating ##  
+### **File I/O Operations**
+- `ft_putchar_fd` – Writes a character to a file descriptor  
+- `ft_putendl_fd` – Writes a string followed by a newline to a file descriptor  
+- `ft_putnbr_fd` – Writes an integer to a file descriptor  
+- `ft_putstr_fd` – Writes a string to a file descriptor  
+- `get_next_line` – Reads a line from a file descriptor  
 
-### Static Lib: ( libft.a )
-- To generate a staic libft ( libft.a ), Run the following command :
-```
+---
+
+## **Building the Library**
+
+Libft supports both **static** and **shared** library generation through the provided **Makefile**.
+
+### **Generating a Static Library (`libft.a`)**
+To compile the **static** version of the library, run:
+```sh
 make all
-```
-or 
-```
+``````
+- Or 
+
+```sh
 make static
 ```
 
-### Shared Lib: ( libft.so )
-To generate a shared libft ( libft.so ), Run the following shell command :
+### **Generating a Shared Library (`libft.so`)**
+To compile the **static** version of the library, run:
+```sh
+make shared 
 ```
-make shared
-```
+
 ---
