@@ -71,7 +71,7 @@ Libft supports both **static** and **shared** library generation through the pro
 ### **Generating a Static Library (`libft.a`)**
 To compile the **static** version of the library, run:
 ```sh
-make all
+make
 ``````
 - Or 
 
