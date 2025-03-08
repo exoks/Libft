@@ -2,8 +2,6 @@
 
 This project is a C language library that includes over **40 utility** functions, designed to enhance standard functionality. It features a **Makefile** that automates the compilation process, generating both a **static** (`.a`) and **shared** (`.so`) library for seamless integration into various projects.
 
----
-
 ## **Available Functions**
 
 ### **Memory Management**
@@ -62,8 +60,6 @@ This project is a C language library that includes over **40 utility** functions
 - `ft_putstr_fd` – Writes a string to a file descriptor  
 - `get_next_line` – Reads a line from a file descriptor  
 
----
-
 ## **Building the Library**
 
 Libft supports both **static** and **shared** library generation through the provided **Makefile**.
@@ -82,6 +78,34 @@ make static
 To compile the **static** version of the library, run:
 ```sh
 make shared 
+```
+
+## Using the Library ##
+To compile your program with `libft`, use one of the following methods:
+
+#### - Direct Linking ####
+```bash
+cc -Wall -Wextra -Werror -Iinclude test.c libft.a -o foo 
+```
+Or
+
+#### - Using the Library Flag ####
+```bash
+cc -Wall -Wextra -Werror -Iinclude test.c -L. -lft -o foo
+```
+
+> NOTE  
+> - Replace `test.c` with your actual source file.
+
+## Cleanup ##
+- To remove Object files, run:
+```bash
+make clean
+```
+
+- To remove `libft.a`, `libft.so` and object files, run:
+```bash
+make fclean
 ```
 
 ---
