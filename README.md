@@ -87,7 +87,7 @@ To compile your program with `libft`, use one of the following methods:
 ```bash
 cc -Wall -Wextra -Werror -Iinclude test.c libft.a -o foo 
 ```
-Or
+- Or
 
 #### - Using the Library Flag ####
 ```bash
